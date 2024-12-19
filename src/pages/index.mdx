@@ -1,3 +1,11 @@
+---
+layout: ../layouts/Layout.astro
+title: "Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models"
+description: "AAAI 2025 paper"
+favicon: favicon.svg
+thumbnail: teaser.png
+---
+
 import Layout from "../layouts/Layout.astro";
 
 import Header from "../components/Header.astro";
@@ -18,7 +26,7 @@ import qualitative_1 from "../assets/qualitative_results_supp.png";
 import qualitative_2 from "../assets/qualitative_results_supp_2.png";
 import citi_logo from "../assets/citi_logo.jpg";
 import ntu_logo from "../assets/ntu_logo.jpeg";
-import jhu_logo from "../assets/jhu_logo.png"
+import jhu_logo from "../assets/jhu_logo.jpg";
 
 
 import Splat from "../components/Splat.tsx"
@@ -74,6 +82,7 @@ export const components = {pre: CodeBlock}
     {
       name: "Johns Hopkins University",
       notes: ["3"],
+      logo: jhu_logo
     }
 
   ]}
@@ -103,18 +112,18 @@ export const components = {pre: CodeBlock}
   ]}
   />
 
-<Figure caption="<b>Figure. Qualitative results compared to the previous methods.</b> Our adversarial images can effectively corrupt the edited results without significant fidelity decrease. The same column shares the same random seed for fair comparisons.">
-    <Image source={teaser} width="1000" altText="teaser"/>
-</Figure>
 
 <Figure caption="">
-    <Image source={overview} width="1000" altText="overview"/>
+    <Image source={overview} width="800" altText="overview"/>
 </Figure>
 
 ## Abstract
 
 Diffusion Models have emerged as powerful generative models for high-quality image synthesis, with many subsequent image editing techniques based on them. However, the ease of text-based image editing introduces significant risks, such as malicious editing for scams or intellectual property infringement. Previous works have attempted to safeguard images from diffusion-based editing by adding imperceptible perturbations. These methods are costly and specifically target prevalent Latent Diffusion Models (LDMs), while Pixel-domain Diffusion Models (PDMs) remain largely unexplored and robust against such attacks. Our work addresses this gap by proposing a novel attack framework, AtkPDM. AtkPDM is mainly composed of a feature representation attacking loss that exploits vulnerabilities in denoising UNets and a latent optimization strategy to enhance the naturalness of protected images. Extensive experiments demonstrate the effectiveness of our approach in attacking dominant PDM-based editing methods (e.g., SDEdit) while maintaining reasonable protection fidelity and robustness against common defense methods. Additionally, our framework is extensible to LDMs, achieving comparable performance to existing approaches. Project page URL: https://AlexPeng517.github.io/AtkPDM
 
+<Figure caption="<b>Figure. Qualitative results compared to the previous methods.</b> Our adversarial images can effectively corrupt the edited results without significant fidelity decrease. The same column shares the same random seed for fair comparisons.">
+    <Image source={teaser} width="800" altText="teaser"/>
+</Figure>
 
 
 ## BibTeX Citation
