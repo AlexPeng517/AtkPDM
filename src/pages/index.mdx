@@ -1,0 +1,129 @@
+import Layout from "../layouts/Layout.astro";
+
+import Header from "../components/Header.astro";
+import Video from "../components/Video.astro";
+import HighlightedSection from "../components/HighlightedSection.astro";
+import SmallCaps from "../components/SmallCaps.astro";
+import Figure from "../components/Figure.astro";
+import Image from "../components/Image.astro";
+import TwoColumns from "../components/TwoColumns.astro";
+import YouTubeVideo from "../components/YouTubeVideo.astro";
+import LaTeX from "../components/LaTeX.astro";
+
+
+import teaser from "../assets/qualitative_results.png";
+import overview from "../assets/overview.png";
+import framework from "../assets/framework.png";
+import qualitative_1 from "../assets/qualitative_results_supp.png";
+import qualitative_2 from "../assets/qualitative_results_supp_2.png";
+import citi_logo from "../assets/citi_logo.jpg";
+import ntu_logo from "../assets/ntu_logo.jpeg";
+import jhu_logo from "../assets/jhu_logo.png"
+
+
+import Splat from "../components/Splat.tsx"
+
+import CodeBlock from "../components/CodeBlock.astro";
+export const components = {pre: CodeBlock}
+
+<Header
+  title={frontmatter.title}
+  authors={[
+    {
+      name: "Chun-Yen Shih",
+      url: "",
+      notes: ["*", "1", "2"],
+    },
+    {
+      name: "Li-Xuan Peng",
+      url: "https://alexpeng517.github.io/",
+      notes: ["*", "1"],
+    },
+    {
+      name: "Jia-Wei Liao",
+      url: "https://jwliao1209.github.io/",
+      notes: ["*", "1", "2"],
+    },
+    {
+      name: "Ernie Chu",
+      url: "https://www.cs.jhu.edu/~schu23/",
+      notes: ["*", "3"],
+    },
+    {
+      name: "Cheng-Fu Chou",
+      url: "https://www.csie.ntu.edu.tw/~ccf/",
+      notes: ["2"],
+    },
+    {
+      name: "Jun-Cheng Chen",
+      url: "https://homepage.citi.sinica.edu.tw/pages/pullpull/",
+      notes: ["1"],
+    },
+  ]}
+  institutions={[
+    {
+      name: "Research Center for Information Technology Innovation, Academia Sinica",
+      notes: ["1"],
+      logo: citi_logo,
+    },
+    {
+      name: "National Tawian University",
+      notes: ["2"],
+      logo: ntu_logo,
+    },
+    {
+      name: "Johns Hopkins University",
+      notes: ["3"],
+      logo: jhu_logo,
+    }
+
+  ]}
+  conference="AAAI 2025"
+  notes={[
+    {
+      symbol: "*",
+      text: " Equal contribution",
+    },
+  ]}
+  links={[
+    {
+      name: "Paper",
+      url: "https://www.arxiv.org/pdf/2408.11810",
+      icon: "fa-solid:file-pdf",
+    },
+    {
+      name: "Code",
+      url: "https://github.com/AlexPeng517/AtkPDM",
+      icon: "mdi:github",
+    },
+    {
+      name: "arXiv",
+      url: "https://www.arxiv.org/abs/2408.11810",
+      icon: "academicons:arxiv",
+    },
+  ]}
+  />
+
+<Figure caption="<b>Figure. Qualitative results compared to the previous methods.</b> Our adversarial images can effectively corrupt the edited results without significant fidelity decrease. The same column shares the same random seed for fair comparisons.">
+    <Image source={teaser} width="1000" altText="teaser"/>
+</Figure>
+
+
+
+## Abstract
+
+Diffusion Models have emerged as powerful generative models for high-quality image synthesis, with many subsequent image editing techniques based on them. %leveraging these diffusion processes. 
+However, the ease of text-based image editing introduces significant risks, such as malicious editing for scams or intellectual property infringement. Previous works have attempted to safeguard images from diffusion-based editing by adding imperceptible perturbations. These methods are costly and specifically target prevalent Latent Diffusion Models (LDMs), while Pixel-domain Diffusion Models (PDMs) remain largely unexplored and robust against such attacks. Our work addresses this gap by proposing a novel attack framework, AtkPDM. AtkPDM is mainly composed of a feature representation attacking loss that exploits vulnerabilities in denoising UNets and a latent optimization strategy to enhance the naturalness of protected images. Extensive experiments demonstrate the effectiveness of our approach in attacking dominant PDM-based editing methods (e.g., SDEdit) while maintaining reasonable protection fidelity and robustness against common defense methods. Additionally, our framework is extensible to LDMs, achieving comparable performance to existing approaches. Project page URL: https://AlexPeng517.github.io/AtkPDM
+
+
+
+## BibTeX Citation
+
+```bibtex
+@inproceedings{shih2024pixelbarriereffectiveevasion,
+  title     = {Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models},
+  author    = {Chun-Yen Shih and Li-Xuan Peng and Jia-Wei Liao and Ernie Chu and Cheng-Fu Chou and Jun-Cheng Chen},
+  booktitle = {Annual AAAI Conference on Artificial Intelligence (AAAI)},
+  year      = {2025},
+}
+```

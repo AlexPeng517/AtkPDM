@@ -1,0 +1,55 @@
+---
+import { Image as AstroImage } from "astro:assets";
+import type { Institution } from "../types/types";
+
+interface Props {
+  institutions: Institution[];
+}
+
+const { institutions } = Astro.props;
+---
+
+<div class="flex flex-row gap-x-8 gap-y-4 flex-wrap justify-center">
+  {
+    institutions.map((institution) => (
+      <div class="flex flex-col items-center text-center">
+        <span class="text-xl flex flex-row items-center">
+          {institution.logo && (
+            <AstroImage
+              style="image-rendering: crisp-edges;"
+              class="logo mr-2"
+              src={institution.logo}
+              alt={`${institution.name} logo`}
+            />
+          )}
+          {institution.url ? (
+            <a href={institution.url} class="">
+              {institution.name}
+            </a>
+          ) : (
+            institution.name
+          )}
+          {institution.notes && (
+            <sup class="text-1xl flex note-sup">
+              {institution.notes.map(
+                (note, index, array) =>
+                  note + (index < array.length - 1 ? "," : "")
+              )}
+            </sup>
+          )}
+        </span>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .note-sup {
+    line-height: 1.5;
+    vertical-align: top;
+  }
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+</style>
