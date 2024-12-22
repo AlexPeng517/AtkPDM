@@ -22,7 +22,7 @@ Starting from the latent, $\mathbf{z}^\text{adv}$, of the initial adversarial im
 
 ## Citation
 If you use this code, please cite the following:
-```
+```bibtex
 @inproceedings{shih2024atkpdm,
   title     = {Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models},
   author    = {Chun-Yen Shih and Li-Xuan Peng and Jia-Wei Liao and Ernie Chu and Cheng-Fu Chou and Jun-Cheng Chen},
