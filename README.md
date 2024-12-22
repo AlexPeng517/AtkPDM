@@ -15,7 +15,7 @@ Diffusion-based image editing can generate high-quality image variation based on
 
 
 ## Proposed Pipeline
-Starting from the latent, $\mathbf{z}^\text{adv}$, of the initial adversarial image, we first decode back to pixel-domain to perform forward diffusion with both $\mathbf{x}$ and $\mathbf{x}^\text{adv}$ and feed them to frozen victim UNet. We then extract the feature representation of the middle block in UNet to calculate our $\mathcal{L}_\text{attack}$, aiming to distract the recognition of image semantics. We also calculate our $\mathcal{L}_\text{fidelity}$ in pixel-domain to constrain the optimization. Finally, the $\mathbf{z}^\text{adv}$ is being alternatively updated by loss gradients.
+Starting from the latent, $\mathbf{z}^\text{adv}$, of the initial adversarial image, we first decode back to pixel-domain to perform forward diffusion with both $\mathbf{x}$ and $\mathbf{x}^\text{adv}$ and feed them to frozen victim UNet. We then extract the feature representation of the middle block in UNet to calculate our $L_\text{attack}$, aiming to distract the recognition of image semantics. We also calculate our $L_\text{fidelity}$ in pixel-domain to constrain the optimization. Finally, the $\mathbf{z}^\text{adv}$ is being alternatively updated by loss gradients.
 
 <img width="800" alt="twllm" src="figures/framework.png">
 
