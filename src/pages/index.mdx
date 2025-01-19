@@ -28,6 +28,10 @@ import citi_logo from "../assets/citi_logo.jpg";
 import ntu_logo from "../assets/ntu_logo.jpeg";
 import jhu_logo from "../assets/jhu_logo.jpg";
 
+import paper from "../assets/files/paper.pdf";
+import poster from "../assets/files/poster.pdf";
+import slides from "../assets/files/slides.pdf";
+
 
 import Splat from "../components/Splat.tsx"
 
@@ -40,51 +44,50 @@ export const components = {pre: CodeBlock}
     {
       name: "Chun-Yen Shih",
       url: "",
-      notes: ["*", "1", "2"],
+      notes: ["1", "3", "*"],
     },
     {
       name: "Li-Xuan Peng",
       url: "https://alexpeng517.github.io/",
-      notes: ["*", "1"],
+      notes: ["3", "*"],
     },
     {
       name: "Jia-Wei Liao",
       url: "https://jwliao1209.github.io/",
-      notes: ["1", "2"],
+      notes: ["1", "3"],
     },
     {
       name: "Ernie Chu",
       url: "https://www.cs.jhu.edu/~schu23/",
-      notes: ["3"],
+      notes: ["2"],
     },
     {
       name: "Cheng-Fu Chou",
       url: "https://www.csie.ntu.edu.tw/~ccf/",
-      notes: ["2"],
+      notes: ["1"],
     },
     {
       name: "Jun-Cheng Chen",
       url: "https://homepage.citi.sinica.edu.tw/pages/pullpull/",
-      notes: ["1"],
+      notes: ["3"],
     },
   ]}
   institutions={[
     {
-      name: "Research Center for Information Technology Innovation, Academia Sinica",
-      notes: ["1"],
-      logo: citi_logo,
-    },
-    {
       name: "National Tawian University",
-      notes: ["2"],
+      notes: ["1"],
       logo: ntu_logo,
     },
     {
       name: "Johns Hopkins University",
-      notes: ["3"],
+      notes: ["2"],
       logo: jhu_logo
+    },
+    {
+      name: "Research Center for Information Technology Innovation, Academia Sinica",
+      notes: ["3"],
+      logo: citi_logo,
     }
-
   ]}
   conference="AAAI 2025"
   notes={[
@@ -95,8 +98,23 @@ export const components = {pre: CodeBlock}
   ]}
   links={[
     {
+      name: "arXiv",
+      url: "https://www.arxiv.org/abs/2408.11810",
+      icon: "academicons:arxiv",
+    },
+    {
       name: "Paper",
-      url: "https://www.arxiv.org/pdf/2408.11810",
+      url: "paper",
+      icon: "fa-solid:file-pdf",
+    },
+    {
+      name: "Poster",
+      url: poster,
+      icon: "fa-solid:file-pdf",
+    },
+    {
+      name: "Slides",
+      url: slides,
       icon: "fa-solid:file-pdf",
     },
     {
@@ -104,22 +122,18 @@ export const components = {pre: CodeBlock}
       url: "https://github.com/AlexPeng517/AtkPDM",
       icon: "mdi:github",
     },
-    {
-      name: "arXiv",
-      url: "https://www.arxiv.org/abs/2408.11810",
-      icon: "academicons:arxiv",
-    },
   ]}
   />
 
+
+## Abstract
+
+Diffusion Models have emerged as powerful generative models for high-quality image synthesis, with many subsequent image editing techniques based on them. However, the ease of text-based image editing introduces significant risks, such as malicious editing for scams or intellectual property infringement. Previous works have attempted to safeguard images from diffusion-based editing by adding imperceptible perturbations. These methods are costly and specifically target prevalent Latent Diffusion Models (LDMs), while Pixel-domain Diffusion Models (PDMs) remain largely unexplored and robust against such attacks. Our work addresses this gap by proposing a novel attack framework, AtkPDM. AtkPDM is mainly composed of a feature representation attacking loss that exploits vulnerabilities in denoising UNets and a latent optimization strategy to enhance the naturalness of protected images. Extensive experiments demonstrate the effectiveness of our approach in attacking dominant PDM-based editing methods (e.g., SDEdit) while maintaining reasonable protection fidelity and robustness against common defense methods. Additionally, our framework is extensible to LDMs, achieving comparable performance to existing approaches.
 
 <Figure caption="">
     <Image source={overview} width="800" altText="overview"/>
 </Figure>
 
-## Abstract
-
-Diffusion Models have emerged as powerful generative models for high-quality image synthesis, with many subsequent image editing techniques based on them. However, the ease of text-based image editing introduces significant risks, such as malicious editing for scams or intellectual property infringement. Previous works have attempted to safeguard images from diffusion-based editing by adding imperceptible perturbations. These methods are costly and specifically target prevalent Latent Diffusion Models (LDMs), while Pixel-domain Diffusion Models (PDMs) remain largely unexplored and robust against such attacks. Our work addresses this gap by proposing a novel attack framework, AtkPDM. AtkPDM is mainly composed of a feature representation attacking loss that exploits vulnerabilities in denoising UNets and a latent optimization strategy to enhance the naturalness of protected images. Extensive experiments demonstrate the effectiveness of our approach in attacking dominant PDM-based editing methods (e.g., SDEdit) while maintaining reasonable protection fidelity and robustness against common defense methods. Additionally, our framework is extensible to LDMs, achieving comparable performance to existing approaches. Project page URL: https://AlexPeng517.github.io/AtkPDM
 
 <Figure caption="<b>Figure. Qualitative results compared to the previous methods.</b> Our adversarial images can effectively corrupt the edited results without significant fidelity decrease. The same column shares the same random seed for fair comparisons.">
     <Image source={teaser} width="800" altText="teaser"/>
@@ -129,7 +143,7 @@ Diffusion Models have emerged as powerful generative models for high-quality ima
 ## BibTeX Citation
 
 ```bibtex
-@inproceedings{shih2024pixelbarriereffectiveevasion,
+@inproceedings{shih2024atkpdm,
   title     = {Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models},
   author    = {Chun-Yen Shih and Li-Xuan Peng and Jia-Wei Liao and Ernie Chu and Cheng-Fu Chou and Jun-Cheng Chen},
   booktitle = {Annual AAAI Conference on Artificial Intelligence (AAAI)},
