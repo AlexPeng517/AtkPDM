@@ -6,7 +6,12 @@
 
 ***Association for the Advancement of Artificial Intelligence (AAAI) 2025***
 
-**Author:** [Chun-Yen Shih](https://www.linkedin.com/in/chun-yen-shih-590810207/?originalSubdomain=tw), [Li-Xuan Peng](https://alexpeng517.github.io/), [Jia-Wei Liao](https://jwliao1209.github.io/),[Ernie Chu](https://www.cs.jhu.edu/~schu23/), [Cheng-Fu Chou](https://www.csie.ntu.edu.tw/~ccf/), [Jun-Cheng Chen](https://homepage.citi.sinica.edu.tw/pages/pullpull/)
+**Author:**
+[Chun-Yen Shih](https://www.linkedin.com/in/chun-yen-shih-590810207/?originalSubdomain=tw), [Li-Xuan Peng](https://alexpeng517.github.io/),
+[Jia-Wei Liao](https://jwliao1209.github.io/),
+[Ernie Chu](https://www.cs.jhu.edu/~schu23/),
+[Cheng-Fu Chou](https://www.csie.ntu.edu.tw/~ccf/),
+[Jun-Cheng Chen](https://homepage.citi.sinica.edu.tw/pages/pullpull/)
 
 ## :wrench: Setup
 To set up the virtual environment and install the required packages, use the following commands:
