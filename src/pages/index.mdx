@@ -24,6 +24,7 @@ import overview from "../assets/overview.png";
 import framework from "../assets/framework.gif";
 import qualitative_1 from "../assets/qualitative_results_supp.png";
 import qualitative_2 from "../assets/qualitative_results_supp_2.png";
+import paper_logo from "../assets/paper_logo.jpg";
 import citi_logo from "../assets/citi_logo.jpg";
 import ntu_logo from "../assets/ntu_logo.jpeg";
 import jhu_logo from "../assets/jhu_logo.jpg";
@@ -32,13 +33,13 @@ import paper from "../assets/files/paper.pdf";
 import poster from "../assets/files/poster.pdf";
 import slides from "../assets/files/slides.pdf";
 
-
 import Splat from "../components/Splat.tsx"
-
 import CodeBlock from "../components/CodeBlock.astro";
 export const components = {pre: CodeBlock}
 
+
 <Header
+  logo={paper_logo}
   title={frontmatter.title}
   authors={[
     {

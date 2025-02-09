@@ -1,11 +1,14 @@
 ---
 import type { Author, Institution, Note, Link } from "../types/types";
+import { Image as AstroImage } from "astro:assets";
 import Links from "./Links.astro";
 import Authors from "./Authors.astro";
 import Institutions from "./Institutions.astro";
 import Notes from "./Notes.astro";
+import type { ImageFunction } from "astro:content";
 
 interface Props {
+  logo: ImageMetadata;
   title: string;
   authors: Author[];
   institutions: Institution[];
@@ -14,11 +17,18 @@ interface Props {
   links: Link[];
 }
 
-const { title, authors, institutions, conference, notes, links } = Astro.props as Props;
+const {logo, title, authors, institutions, conference, notes, links } = Astro.props as Props;
 ---
 
 <header class="flex flex-col gap-10 items-center mb-6">
-  <h1>{title}</h1>
+  <div style="display: flex; align-items: center;">
+    <AstroImage
+      src={logo}
+      alt="paper logo"
+      width={100}
+    />
+    <h1 style="margin: 0; text-align: center;">{title}</h1>
+  </div>
   <div class="flex flex-col gap-6 items-center">
     <Authors authors={authors} />
     <Institutions institutions={institutions} />
